@@ -1,0 +1,80 @@
+html,body {
+	height: 100%;
+}
+
+.container{
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+}
+.container::before {
+	content: "";
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #1F5A13;
+	opacity: 96%;
+
+}
+.global-container{
+	font-family: "Comic Sans MS", sans-serif;
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#pop2, #pop1{
+	display: none;
+	text-align: left;
+}
+#button, #button1{
+	font-size: 18px;
+}
+.card{
+	width: 200px;
+	margin: 0 auto;
+}
+.card1{
+	margin: 20px auto 0;
+	width: 200px;
+}
+
+.card-title{
+	font-weight:300;
+	font-size: 36px;
+}
+
+.btn{
+	font-size: 14px;
+	margin-top:0;
+}
+.login-form{
+	width:460px;
+	margin:0;
+}
+
+
+.card-body{
+	background-color: #349721;
+	color: #f4f4f4;
+
+}
+button[type="submit"]{
+	background-color: #ADD5A6;
+	color: #1A4B10;
+}
+input{
+	text-align: center;
+	height: 45px;
+
+}
+input[type="text"],input[type="password"]{
+	font-size: 16px;
+}
