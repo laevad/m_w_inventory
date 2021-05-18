@@ -20,16 +20,19 @@
             <div class="modal-body">
                 <div class="form-group p-2">
                     <label for="name"  style="color: #d6ead2;">Product Name</label>
-                    <input type="text" required class="form-control" id="name" name="name"  placeholder="e.g. Coke">
+                    <input type="text"  class="form-control" id="name" name="name"  placeholder="e.g. Coke" value="{{ old('name') }}">
+                    <span class="pop-error" style="color: yellow!important">@error('name'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group p-2">
                     <label for="price"  style="color: #d6ead2;">Product Price</label>
-                    <input type="text" required class="form-control" id="price" name="price"  placeholder="e.g. 9999.00">
+                    <input  class="form-control" id="price" name="price"  placeholder="e.g. 9999.00" value="{{ old('price') }}">
+                    <span class="pop-error" style="color: yellow!important">@error('price'){{ $message }} @enderror</span>
                 </div>
 
                 <div class="form-group p-2">
                     <label for="quantity"  style="color: #d6ead2;">Product Quantity</label>
-                    <input type="number" required class="form-control" id="quantity" name="quantity" placeholder="e.g. 99999">
+                    <input   class="form-control" id="quantity" name="quantity" placeholder="e.g. 99999" value="{{ old('quantity') }}">
+                    <span class="pop-error" style="color: yellow!important">@error('quantity'){{ $message }} @enderror</span>
                 </div>
             </div>
             <div class="modal-footer border-top-0 d-flex justify-content-center">

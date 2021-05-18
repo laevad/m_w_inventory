@@ -18,16 +18,19 @@
             <div class="modal-body">
                 <div class="form-group p-2">
                     <label for="name"  style="color: #d6ead2;">Product Name</label>
-                    <input type="text" required class="form-control" id="name" name="name"  value="{{ $product['name'] }}">
+                    <input class="form-control" id="name" name="name"  value="{{ $product['name'] }}">
+                    <span class="pop-error" style="color: yellow!important">@error('name'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-group p-2">
                     <label for="price"  style="color: #d6ead2;">Product Price</label>
-                    <input type="text" required class="form-control" id="price"  value="{{ $product['price'] }}" name="price">
+                    <input class="form-control" id="price"  value="{{ $product['price'] }}" name="price">
+                    <span class="pop-error" style="color: yellow!important">@error('price'){{ $message }} @enderror</span>
                 </div>
 
                 <div class="form-group p-2">
                     <label for="quantity"  style="color: #d6ead2;">Product Quantity</label>
-                    <input type="number" required class="form-control" id="quantity" name="quantity"  value="{{ $product['quantity'] }}">
+                    <input class="form-control" id="quantity" name="quantity"  value="{{ $product['quantity'] }}">
+                    <span class="pop-error" style="color: yellow!important">@error('quantity'){{ $message }} @enderror</span>
                 </div>
             </div>
             <div class="modal-footer border-top-0 d-flex justify-content-center">

@@ -10,4 +10,14 @@
 
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function showMsg(varName)
+    {
+        $("."+varName).fadeIn('slow', function () {
+            $(this).delay(3200).fadeOut('slow');
+        });
+    }
+    showMsg('pop-error');
+</script>
 </html>

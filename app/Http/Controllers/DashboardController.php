@@ -33,6 +33,12 @@ class DashboardController extends Controller
     }
     public function addProduct(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required|max:11|numeric',
+            'quantity' => 'required|max:11|numeric'
+        ]);
+    
         $product = new Product;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
@@ -76,6 +82,11 @@ class DashboardController extends Controller
     }
     public function saveEditProduct(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'price' => 'required|max:11|numeric',
+            'quantity' => 'required|max:11|numeric'
+        ]);
         $product = DB::table('products')->where('id', $request->input('cid'))
         ->update([
             'name' => $request->input('name'),
