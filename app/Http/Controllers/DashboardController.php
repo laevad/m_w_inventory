@@ -35,8 +35,9 @@ class DashboardController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'price' => 'required|max:11|numeric',
-            'quantity' => 'required|max:11|numeric'
+            'price' => 'required|integer|digits_between:1,10',
+            'quantity' => 'required|integer|digits_between:1,10',
+            
         ]);
     
         $product = new Product;
@@ -84,8 +85,8 @@ class DashboardController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'price' => 'required|max:11|numeric',
-            'quantity' => 'required|max:11|numeric'
+            'price' => 'required|integer|digits_between:1,10',
+            'quantity' => 'required|integer|digits_between:1,10',
         ]);
         $product = DB::table('products')->where('id', $request->input('cid'))
         ->update([
