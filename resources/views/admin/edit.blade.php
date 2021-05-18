@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group p-2">
                     <label for="price"  style="color: #d6ead2;">Product Price</label>
-                    <input type="text" required class="form-control" id="price"  value="{{ $product['name'] }}" name="price">
+                    <input type="text" required class="form-control" id="price"  value="{{ $product['price'] }}" name="price">
                 </div>
 
                 <div class="form-group p-2">
