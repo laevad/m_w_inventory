@@ -25,7 +25,15 @@ class ProductAPIController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->quantity = $request->input('quantity');
+        $product->save();
+        return response()->json(array(
+            'message' => 'product Added',
+            'product' => $product
+        ),201);
     }
 
     /**
@@ -36,7 +44,9 @@ class ProductAPIController extends Controller
      */
     public function show($id)
     {
-        //
+        $product =  Product::find($id);
+        if($product == NULL){ return response()->json( ['message' => 'Product not found'] ); }
+        return response()->json($product);
     }
 
     /**
@@ -48,7 +58,21 @@ class ProductAPIController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product =  Product::find($id);
+        if($product == NULL){ return response()->json( ['message' => 'Product not found'] ); }
+        if($request->has('name')){
+            $product->name = $request->input('name');
+        }
+        if($request->has('price')){
+            $product->price = $request->input('price');
+        }
+        if($request->has('quantity')){
+            $product->quantity = $request->input('quantity');
+        }
+        $product->save();
+        return response()->json(array(
+           'message' => 'Product is Updated!',
+        ));
     }
 
     /**
@@ -59,6 +83,12 @@ class ProductAPIController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product =  Product::find($id);
+        if($product == NULL){ return response()->json( ['message' => 'Product not found'] ); }
+        $product->delete();
+        return response()->json(array(
+           'message' => 'Product is deleted!',
+        ));
+
     }
 }
