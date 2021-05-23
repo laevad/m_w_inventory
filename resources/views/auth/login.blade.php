@@ -7,7 +7,7 @@
             <div class="card-text">
                 <form class="firstForm" novalidate method="POST" action="{{ route('auth.check') }}">
                     @if(Session::get('fail'))
-					<div class="alert alert-danger pop-error" style="text-align: center">
+					<div class="pop-error text-warning" style="text-align: center;">
 						{{ Session::get('fail') }}
 					</div>
 					@endif
@@ -16,11 +16,11 @@
                     <h3 class="card-title text-center mb-4">M & W Inventory</h3>
                     <div class="form-group">
                         <input type="text" id="email" name="email" placeholder="Username" class="form-control form-control-sm" value="{{ old('email') }}">
-                        <span class="text-danger pop-error" style="color: white!important">@error('email'){{ $message }} @enderror</span>
+                        <span class="text-warning pop-error" style="">@error('email'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-group">
                         <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-sm mb-2">
-                        <span class="text-danger pop-error" style="color: white!important">@error('password'){{ $message }} @enderror</span>
+                        <span class="text-warning pop-error" style="">@error('password'){{ $message }} @enderror</span>
                     </div>
                     <button type="submit" class="btn btn-block btn-log" id="sign-in" >Sign in</button>
                 </form>
